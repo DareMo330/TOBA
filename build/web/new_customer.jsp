@@ -1,10 +1,5 @@
-<!DOCTYPE html> 
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Titan Online Banking Application: Sign Up</title>
-</head>
-<body>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:import url="header.html" />
 	<h1>Sign Up</h1>
 	<p> Please fill out the form below to create your TOBA account.</p>
 	<p><i>${message}</i></p>
@@ -28,6 +23,5 @@
 		<input type="email" name="email"><br>
 		<input type="submit" value="Sign Up" id="signup">
 	</form>	
-	<a href="login.html"> Go Back </a>
-</body>
-</html>
+	<a href="login.jsp"> Go Back </a>
+<c:import url="footer.jsp" />

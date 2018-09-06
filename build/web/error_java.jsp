@@ -1,10 +1,5 @@
-<!DOCTYPE html> 
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Titan Online Banking Application: Java Error</title>
-</head>
-<body>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:import url="header.html" />
 	<h1>Java Error</h1>
 	<p> a Java exception has been thrown. Please try again.</p>
 	
@@ -12,6 +7,5 @@
 	<p>Type: {pageContext.exception["class"]}</p>
 	<p>Message: {pageContext.exception.message} </p>
 	
-	<a href="index.html"> Go Back </a>
-</body>
-</html>
+	<a href="index.jsp"> Go Back </a>
+<c:import url="footer.jsp" />

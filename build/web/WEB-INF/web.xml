@@ -13,6 +13,10 @@
   	<servlet-name>TransactionServlet</servlet-name>
   	<servlet-class>tobaserv.TransactionServlet</servlet-class>
   </servlet>
+    <servlet>
+  	<servlet-name>PasswordResetServlet</servlet-name>
+  	<servlet-class>tobaserv.PasswordResetServlet</servlet-class>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>LoginServlet</servlet-name>
@@ -26,6 +30,10 @@
   	<servlet-name>TransactionServlet</servlet-name>
   	<url-pattern>/transaction</url-pattern>
   </servlet-mapping>
+    <servlet-mapping>
+  	<servlet-name>PasswordResetServlet</servlet-name>
+  	<url-pattern>/password_reset</url-pattern>
+  </servlet-mapping>
   
   <error-page>
   	<error-code>404</error-code>
@@ -36,7 +44,6 @@
   	<location>/error_java.jsp</location>
   </error-page>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
 </web-app>
