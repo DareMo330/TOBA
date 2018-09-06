@@ -14,7 +14,7 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//create variables 
-		String url = "/login.jsp"; //url to redirect to
+		String url = "/login.html"; //url to redirect to
 		 
 		//find the current action
 	     String action = request.getParameter("action");
@@ -30,11 +30,11 @@ public class LoginServlet extends HttpServlet {
 			
 			 //validate entered info, if correct redirect to account page
 			 if(username.equals("jsmith@toba.com") && password.equals("letmein")) {
-				 url = "account_activity.jsp";
+				 url = "account_activity.html";
 			 }
 			 //if failed redirect to login fail page
 			 else {
-				 url = "login_failure.jsp";
+				 url = "login_failure.html";
 			 }
 	    }
 	    response.sendRedirect(url);

@@ -4,10 +4,8 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import tobaserv.User;
 
 
 public class NewCustomerServlet extends HttpServlet {
@@ -15,9 +13,7 @@ public class NewCustomerServlet extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//initialize variables 
 		 String url = "/new_customer.jsp";
-		 HttpSession session = request.getSession();
 		 
 			//find the current action
 		     String action = request.getParameter("action");
@@ -43,17 +39,11 @@ public class NewCustomerServlet extends HttpServlet {
 		             url = "/new_customer.jsp"; 
 				 }
 				 else {
-					 
-					 message = "";
-					 //create user object
-					 String username = String.join("", lastName, zipcode);
-					 User user = new User(firstName, lastName, phone, address, city, state, zipcode, email, username, "welcome1");
-					 session.setAttribute("user", user);
 					 //redirect to success page
-					 url = "/success.jsp";
+					 message = "";
+					 url = "/success.html";
 				 }
 				 request.setAttribute("message", message);
-				 
 		    }
 	        getServletContext()
             	.getRequestDispatcher(url)
