@@ -4,6 +4,7 @@
 	<c:if test="${sessionScope.user != null }">
 		<p> Hello, ${sessionScope.user.firstName } ${sessionScope.user.lastName }!</p>
 	</c:if>
+	<a href="add_balance.jsp"> Add Balance</a>
 	<c:if test="${sessionScope.user == null }">
 		<p> You are not logged in.</p>
 	</c:if>

@@ -49,6 +49,11 @@ public class NewCustomerServlet extends HttpServlet {
 					 String username = String.join("", lastName, zipcode);
 					 User user = new User(firstName, lastName, phone, address, city, state, zipcode, email, username, "welcome1");
 					 session.setAttribute("user", user);
+					 //make user an account object as well
+					 Account account = new Account(user, 25.00);
+					 session.setAttribute("account", account);
+					 //add user to database
+					 UserDB.insert(user);
 					 //redirect to success page
 					 url = "/success.jsp";
 				 }
