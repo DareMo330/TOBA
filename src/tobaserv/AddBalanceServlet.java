@@ -1,6 +1,8 @@
 package tobaserv;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpSession;
@@ -32,8 +34,22 @@ public class AddBalanceServlet extends HttpServlet {
 			//add balance
 			account.setBalance(account.getBalance()+balance);
 			session.setAttribute("account", account);
+			//create transaction object
+			Transaction trans = new Transaction(account, "Add Balance", balance);
 			//set in database
 			AccountDB.update(account);
+			AccountDB.addTrans(trans);
+			//update transactions
+			if(session.getAttribute("transactions") != null) {
+			List<Transaction> transactions = (List<Transaction>) session.getAttribute("transactions");
+			transactions.add(trans);
+			session.setAttribute("transactions", transactions);
+			}
+			else {
+				List<Transaction> transactions = null;
+				transactions.add(trans);
+				session.setAttribute("transactions", transactions);
+			}
 				 //redirect to account activity page
 				 url = "/account_activity.jsp";
 			 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context path="/TOBA">
    <Resource auth="Container" 
-   			  name="TOBA" 
+   			  name="tobaPU" 
               driverClassName="com.mysql.jdbc.Driver" 
               logAbandoned="true" maxActive="100" 
               maxIdle="30" maxWait="10000" 

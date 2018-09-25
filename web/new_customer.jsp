@@ -18,7 +18,7 @@
 		<label>State:</label>
 		<input type="text" name="state"><br>
 		<label>Zipcode:</label>
-		<input type="text" name="zipcode"><br>
+		<input type="number"max="99999"name="zipcode"><br>
 		<label>E-Mail:</label>
 		<input type="email" name="email"><br>
 		<input type="submit" value="Sign Up" id="signup">

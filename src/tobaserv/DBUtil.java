@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 public class DBUtil {
 	//create EMF file with persistence unit from persistence.xml
     private static EntityManagerFactory emf = 
-           Persistence.createEntityManagerFactory("tobaPU");
+    	Persistence.createEntityManagerFactory("tobaPU");
     
 	    public static EntityManagerFactory getEmFactory() {
 	        if(emf == null) {

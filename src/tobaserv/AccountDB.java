@@ -1,7 +1,10 @@
 package tobaserv;
 
 import java.sql.*;
+import java.util.List;
+
 import javax.persistence.*;
+
 
 public class AccountDB {
 	//insert information
@@ -54,5 +57,21 @@ public class AccountDB {
 	        } finally {
 	            em.close();
 	        }
+	    }
+	 public static List<Transaction> selectTransactions(String accountid) {
+		 EntityManager em = DBUtil.getEmFactory().createEntityManager();
+	        String qString = "SELECT t FROM Transaction t " +
+	                "WHERE t.id = :accountid";
+	        TypedQuery<Transaction> q = em.createQuery(qString, Transaction.class);
+	        q.setParameter("accountid", accountid);
+	        List<Transaction> transactions;
+	        try {
+	            transactions = q.getResultList();
+	            if (transactions == null || transactions.isEmpty())
+	                transactions = null;
+	        } finally {
+	            em.close();
+	        }
+	        return transactions;
 	    }
     }

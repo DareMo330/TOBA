@@ -17,6 +17,10 @@
   	<servlet-name>PasswordResetServlet</servlet-name>
   	<servlet-class>tobaserv.PasswordResetServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>AddBalanceServlet</servlet-name>
+  	<servlet-class>tobaserv.AddBalanceServlet</servlet-class>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>LoginServlet</servlet-name>
@@ -33,6 +37,10 @@
     <servlet-mapping>
   	<servlet-name>PasswordResetServlet</servlet-name>
   	<url-pattern>/password_reset</url-pattern>
+  </servlet-mapping>
+      <servlet-mapping>
+  	<servlet-name>AddBalanceServlet</servlet-name>
+  	<url-pattern>/add_balance</url-pattern>
   </servlet-mapping>
   
   <error-page>
