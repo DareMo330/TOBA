@@ -3,5 +3,6 @@
 	<h1> Titan Online Banking Application</h1>
 	<a href="login.jsp"> Login </a> <br>
 	<a href="account_activity.jsp"> Account Activity </a> <br>
-	<a href="transaction.jsp"> Transactions</a>
+        <a href="transaction.jsp"> Transactions</a> <br>
+        <a href="admin"> Admin Login</a>
 <c:import url="footer.jsp" />
