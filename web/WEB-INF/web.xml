@@ -6,6 +6,10 @@
   	<servlet-class>tobaserv.LoginServlet</servlet-class>
   </servlet>
   <servlet>
+  	<servlet-name>AdminLoginServlet</servlet-name>
+  	<servlet-class>tobaserv.AdminLoginServlet</servlet-class>
+  </servlet>
+  <servlet>
   	<servlet-name>NewCustomerServlet</servlet-name>
   	<servlet-class>tobaserv.NewCustomerServlet</servlet-class>
   </servlet>
@@ -27,6 +31,10 @@
   	<url-pattern>/login</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
+  	<servlet-name>AdminLoginServlet</servlet-name>
+        <url-pattern>/admin/login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
   	<servlet-name>NewCustomerServlet</servlet-name>
   	<url-pattern>/new_customer</url-pattern>
   </servlet-mapping>
@@ -43,6 +51,30 @@
   	<url-pattern>/add_balance</url-pattern>
   </servlet-mapping>
   
+  <security-role>
+      <description>administrators</description>
+      <role-name>admin</role-name>
+  </security-role>
+  <security-constraint>
+      <web-resource-collection>
+          <url-pattern>/admin/*</url-pattern>
+      </web-resource-collection>
+      
+      <auth-constraint>
+          <role-name>admin</role-name>
+      </auth-constraint>
+      
+      <user-data-constraint>
+          <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+      </user-data-constraint>
+  </security-constraint>
+  <login-config>
+      <auth-method>FORM</auth-method>
+      <form-login-config>
+          <form-login-page>/admin/login.html</form-login-page>
+          <form-error-page>/admin/login_error.html</form-error-page>
+      </form-login-config>
+  </login-config>
   <error-page>
   	<error-code>404</error-code>
   	<location>/error_404.jsp</location>

@@ -11,4 +11,5 @@
               url="jdbc:mysql://localhost:3306/tobadb?autoReconnect=true" 
               username="root"
     />
+   <Realm className="org.apache.catalina.realm.DataSourceRealm" debug="99" dataSourceName="tobadb" localDataSource="true" userTable="User" userNameCol="username" userCredCol="password" userRoleTable="UserRole" roleNameCol="rolename"/>
 </Context>
