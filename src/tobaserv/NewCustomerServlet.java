@@ -53,7 +53,7 @@ public class NewCustomerServlet extends HttpServlet {
 					 Account account = new Account(user, 25.00);
 					 session.setAttribute("account", account);
 					 //add user to database
-					 UserDB.insert(user);
+					 //UserDB.insert(user);
 					 //redirect to success page
 					 url = "/success.jsp";
 				 }

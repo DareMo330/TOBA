@@ -37,8 +37,8 @@ public class AddBalanceServlet extends HttpServlet {
 			//create transaction object
 			Transaction trans = new Transaction(account, "Add Balance", balance);
 			//set in database
-			AccountDB.update(account);
-			AccountDB.addTrans(trans);
+			//AccountDB.update(account);
+			//AccountDB.addTrans(trans);
 			//update transactions
 			if(session.getAttribute("transactions") != null) {
 			List<Transaction> transactions = (List<Transaction>) session.getAttribute("transactions");

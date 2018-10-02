@@ -32,7 +32,7 @@ public class PasswordResetServlet extends HttpServlet {
 			 user.setPassword(password);
 			 session.setAttribute("user", user);
 		//set in database
-			 UserDB.update(user);
+			 //UserDB.update(user);
 		 //redirect to account activity page
 		 url = "/account_activity.jsp";
 		 }
